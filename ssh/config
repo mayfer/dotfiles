@@ -1,0 +1,8 @@
+ServerAliveInterval 300
+ServerAliveCountMax 36
+
+Host sq
+    HostName squiddevo.local
+    User squiddevo
+Host squiddevo.local
+    User squiddevo
