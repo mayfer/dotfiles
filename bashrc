@@ -4,6 +4,11 @@
 export CLICOLOR=1 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+# ATA stuff
+function cds() {
+    cd $(/var/ata/tools/checkout_package -a squid --pathfor $@);
+}
+
 # System-wide .bashrc file for interactive bash(1) shells.
 if [ -z "$PS1" ]; then
    return
