@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/murat/Code/m/localchat'
 let g:netrw_dirhist_2='/Users/murat/Code/m/localchat/localchat'
 let g:netrw_dirhist_3='/Users/murat/.vim'
+let g:netrw_dirhist_4='/Users/murat/Code/teaorbit/teaorbit/templates'

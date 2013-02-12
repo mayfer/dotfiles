@@ -126,7 +126,7 @@ syn match pythonComparison "<\|>\|<=\|>=\|==\|!=\|<>"
 
 
 " Decorators (new in Python 2.4)
-syn match   pythonDecorator "@" display nextgroup=pythonFunction skipwhite
+syn match   pythonDecorator "@[a-zA-Z_0-9]*" display nextgroup=pythonFunction skipwhite
 
 " Comments
 syn match   pythonComment   "#.*$" display contains=pythonTodo,@Spell
