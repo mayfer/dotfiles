@@ -15,7 +15,7 @@ hi Visual ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#253b76 gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=17 cterm=NONE guifg=NONE guibg=#242737 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=17 cterm=NONE guifg=NONE guibg=#242737 gui=NONE
 hi ColorColumn ctermfg=NONE ctermbg=17 cterm=NONE guifg=NONE guibg=#242737 gui=NONE
-hi LineNr ctermfg=102 ctermbg=59 cterm=NONE guifg=#82848d guibg=#242737 gui=NONE
+hi LineNr ctermfg=237 ctermbg=NONE cterm=NONE guifg=#82848d guibg=#242737 gui=NONE
 hi VertSplit ctermfg=59 ctermbg=59 cterm=NONE guifg=#50535f guibg=#50535f gui=NONE
 hi MatchParen ctermfg=220 ctermbg=NONE cterm=underline guifg=#fbde2d guibg=NONE gui=underline
 hi StatusLine ctermfg=231 ctermbg=59 cterm=bold guifg=#f8f8f8 guibg=#50535f gui=bold
@@ -30,7 +30,7 @@ hi Folded ctermfg=249 ctermbg=NONE cterm=NONE guifg=#aeaeae guibg=#0c1021 gui=NO
 hi Normal ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f8 guibg=#0c1021 gui=NONE
 hi Boolean ctermfg=191 ctermbg=NONE cterm=NONE guifg=#d8fa3c guibg=NONE gui=NONE
 hi Character ctermfg=191 ctermbg=NONE cterm=NONE guifg=#d8fa3c guibg=NONE gui=NONE
-hi Comment ctermfg=249 ctermbg=NONE cterm=NONE guifg=#aeaeae guibg=NONE gui=NONE
+hi Comment ctermfg=246 ctermbg=NONE cterm=NONE guifg=#aeaeae guibg=NONE gui=NONE
 hi Conditional ctermfg=220 ctermbg=NONE cterm=NONE guifg=#fbde2d guibg=NONE gui=NONE
 hi Constant ctermfg=191 ctermbg=NONE cterm=NONE guifg=#d8fa3c guibg=NONE gui=NONE
 hi Define ctermfg=220 ctermbg=NONE cterm=NONE guifg=#fbde2d guibg=NONE gui=NONE
@@ -41,11 +41,11 @@ hi DiffText ctermfg=231 ctermbg=24 cterm=bold guifg=#f8f8f8 guibg=#204a87 gui=bo
 hi ErrorMsg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi WarningMsg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi Float ctermfg=191 ctermbg=NONE cterm=NONE guifg=#d8fa3c guibg=NONE gui=NONE
-hi Function ctermfg=208 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
+hi Function ctermfg=202 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
 hi pythonFuncDef ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
-hi pythonFuncName ctermfg=166 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
-hi pythonClassName ctermfg=166 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
-hi pythonDecorator ctermfg=166 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
+hi pythonFuncName ctermfg=202 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
+hi pythonClassName ctermfg=202 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
+hi pythonDecorator ctermfg=202 ctermbg=NONE cterm=NONE guifg=#ff6400 guibg=NONE gui=NONE
 hi PythonBuiltinFunc ctermfg=74 ctermbg=NONE cterm=NONE gui=NONE
 hi Identifier ctermfg=220 ctermbg=NONE cterm=NONE guifg=#fbde2d guibg=NONE gui=NONE
 hi Keyword ctermfg=220 ctermbg=NONE cterm=NONE guifg=#fbde2d guibg=NONE gui=NONE
