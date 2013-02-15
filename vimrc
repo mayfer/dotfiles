@@ -4,7 +4,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set background=dark
-set backupdir=~/.vim/tmp
+set dir=~/.vim/tmp//
 set mouse=a
 set number
 
@@ -21,6 +21,5 @@ nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/.vim/reg
 map <silent> ,p :sview ~/.vim/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
 map <silent> ,P :sview ~/.vim/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
 
-set nocompatible
 filetype on
 let python_highlight_all=1
