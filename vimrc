@@ -3,6 +3,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+set autoindent
 set background=dark
 set dir=~/.vim/tmp//
 set mouse=a
@@ -10,7 +11,7 @@ set number
 
 if has("gui_running")
     set guifont=Menlo:h10
-    color muratboard
+    color blackboard
 else
     color blackboard
 endif
