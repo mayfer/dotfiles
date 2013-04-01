@@ -31,11 +31,20 @@ if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
     PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
 fi
 								    
+# show git branch
+__git_ps1 () 
+{
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf "$(tput setaf 2) [%s] $(tput sgr0)" "${b##refs/heads/}";
+    fi
+}
 
 # if root
 if [ $(id -u) -eq 0 ];
 then
-    PS1="[\@] \u@\h:\w# "
+    PS1="$(tput setaf 3)[\@]$(tput sgr0) \u@\h:\w\$(__git_ps1)# "
 else
-    PS1="[\@] \u@\h:\w$ "
+    PS1="$(tput setaf 3)[\@]$(tput sgr0) \u@\h:\w\$(__git_ps1)$ "
 fi
+
