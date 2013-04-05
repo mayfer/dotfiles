@@ -13,11 +13,16 @@ try:
     locals = subprocess.check_output("git branch", shell=True).strip()
     current = subprocess.check_output("git rev-parse --abbrev-ref HEAD", shell=True).strip()
     lines = list(set([ line.strip()[len('origin/'):] for line in remotes.split("\n") ] + [line.strip().strip('*').strip() for line in locals.split("\n")]))
-    lines.remove(current)
-    lines.remove('HEAD -> origin/master')
+    if current in lines:
+        lines.remove(current)
+    if 'HEAD -> origin/master' in lines:
+        lines.remove('HEAD -> origin/master')
     lines.sort()
 
     print "Current branch is {b}.\n".format(b=current)
+    if len(lines) is 0:
+        print "No other branches available."
+        exit()
 
     i = 1
     for line in lines:
@@ -26,5 +31,5 @@ try:
 
     selection = int(raw_input("\nEnter a number to checkout: "))
     branches = subprocess.check_output("git checkout {b}".format(b=lines[selection-1]), shell=True).strip()
-except:
-    print "Failed."
+except Exception as e:
+    print "Failed. {e}".format(e=e)
