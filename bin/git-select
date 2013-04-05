@@ -1,0 +1,30 @@
+#!/usr/bin/python
+# prompts you for git branch to checkout
+# symlink into /usr/bin/ and do "git select"
+
+import os, subprocess
+
+try:
+    # run fetch in background for speed
+    subprocess.Popen("git fetch", shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    # get list of remote branches
+    remotes = subprocess.check_output("git branch --remotes", shell=True).strip()
+    locals = subprocess.check_output("git branch", shell=True).strip()
+    current = subprocess.check_output("git rev-parse --abbrev-ref HEAD", shell=True).strip()
+    lines = list(set([ line.strip()[len('origin/'):] for line in remotes.split("\n") ] + [line.strip().strip('*').strip() for line in locals.split("\n")]))
+    lines.remove(current)
+    lines.remove('HEAD -> origin/master')
+    lines.sort()
+
+    print "Current branch is {b}.\n".format(b=current)
+
+    i = 1
+    for line in lines:
+        print "{i}) {line}".format(i=i, line=line)
+        i += 1
+
+    selection = int(raw_input("\nEnter a number to checkout: "))
+    branches = subprocess.check_output("git checkout {b}".format(b=lines[selection-1]), shell=True).strip()
+except:
+    print "Failed."
