@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # prompts you for git branch to checkout
-# symlink into /usr/bin/ and do "git select"
+# symlink into /usr/bin/ and do "git choose"
 
 import os, subprocess
 
