@@ -32,19 +32,21 @@ if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
 fi
 								    
 # show git branch
-__git_ps1 () 
-{
+__git_ps1 () {
     local b="$(git symbolic-ref HEAD 2>/dev/null)";
     if [ -n "$b" ]; then
-        printf "[%s]" "${b##refs/heads/}";
+        printf " [%s]" "${b##refs/heads/}";
     fi
 }
 
-# if root
-if [ $(id -u) -eq 0 ];
-then
-    PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\] \[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]# "
-else
-    PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\] \[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]$ "
-fi
+prompt_command() {
+    # if root
+    if [ $(id -u) -eq 0 ];
+    then
+        export PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]# "
+    else
+        export PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]$ "
+    fi
+}
 
+PROMPT_COMMAND=prompt_command
