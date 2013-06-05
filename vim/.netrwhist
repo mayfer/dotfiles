@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/murat/Code/m/localchat'
 let g:netrw_dirhist_2='/Users/murat/Code/m/localchat/localchat'
 let g:netrw_dirhist_3='/Users/murat/.vim'
 let g:netrw_dirhist_4='/Users/murat/Code/teaorbit/teaorbit/templates'
 let g:netrw_dirhist_5='/Users/murat/ata_desktop/squid/cache/panel/master/squid/panel/tuna/user_management'
+let g:netrw_dirhist_6='/Users/murat/Code/hat/hat'
+let g:netrw_dirhist_7='/Users/murat/Code/hat/static'

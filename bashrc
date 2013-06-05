@@ -43,10 +43,19 @@ prompt_command() {
     # if root
     if [ $(id -u) -eq 0 ];
     then
-        export PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]# "
+        PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]# "
     else
-        export PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]$ "
+        PS1="\[$(tput setaf 3)\][\@]\[$(tput sgr0)\] \u@\h:\[$(tput setaf 4)\]\w\[$(tput sgr0)\]\[$(tput setaf 2)\]$(__git_ps1)\[$(tput sgr0)\]$ "
     fi
+
+
+    if [ -z "$VIRTUAL_ENV_DISABLE_PROMPT" ] ; then
+        if [ "$VIRTUAL_ENV" ]; then
+            PS1="(`basename \"$VIRTUAL_ENV\"`) $PS1"
+        fi
+    fi
+
+    export PS1
 }
 
 PROMPT_COMMAND=prompt_command
