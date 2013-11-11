@@ -6,6 +6,7 @@ set smarttab
 set autoindent
 set background=dark
 set dir=~/.vim/tmp//
+set noswapfile
 set mouse=a
 set number
 
