@@ -1,5 +1,8 @@
 # Meant for /etc/bashrc
 
+# set key bindings to vi
+set -o vi
+
 # Terminal colors
 export CLICOLOR=1 
 export LSCOLORS=GxFxCxDxBxegedabagaced
